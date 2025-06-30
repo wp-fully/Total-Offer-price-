@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clinic Offers Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background: #f0f0f0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+
+    
+    .offer-box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      border: 3px solid #ccc;
+    }
+
+    .title {
+      background: yellow;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .sub-title {
+      background: red;
+      color: white;
+      text-align: center;
+      padding: 3px;
+      font-size: 0.9em;
+      margin-bottom: 5px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+      gap: 10px;
+    }
+
+    .row input {
+      width: 30%;
+      padding: 5px;
+      text-align: right;
+    }
+
+    .green { background: #c9f7c4; }
+    .yellow { background: #fff59d; }
+    .red { background: #ffcccc; font-weight: bold; }
+
+    .label {
+      flex: 1;
+    }
+
+    @media (max-width: 600px) {
+      .row input {
+        width: 50%;
+      }
+          .container {
+      grid-template-columns: 1fr;
+      width: 98%;
+    }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Offer 1 -->
+    <div class="offer-box">
+      <div class="title">Offer for Saudi (Others)</div>
+      <div class="row green"><div class="label">Clinic Cost</div><input type="number" class="clinic-cost" value="200"></div>
+      <div class="row"><div class="label">Thaat</div><input type="number" class="thaat" value="23"></div>
+      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
+      <div class="row"><div class="label">Thaat %</div><input type="text" class="thaat-percent" readonly></div>
+    </div>
+
+    <!-- Offer 2 -->
+    <div class="offer-box">
+      <div class="title">Offer for Saudi (Mobadar)</div>
+      <div class="sub-title">For Mobadar</div>
+      <div class="row green"><div class="label">Clinic Cost</div><input type="number" class="clinic-cost" value="100"></div>
+      <div class="row"><div class="label">Thaat</div><input type="number" class="thaat" value="30"></div>
+      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
+      <div class="row"><div class="label">Thaat %</div><input type="text" class="thaat-percent" readonly></div>
+    </div>
+
+    <!-- Offer 3 -->
+    <div class="offer-box">
+      <div class="title">Offer for Non-Saudi (Others)</div>
+      <div class="row green"><div class="label">Clinic Revenue</div><input type="number" class="clinic-cost" value="300"></div>
+      <div class="row"><div class="label">Thaat on Price</div><input type="number" class="thaat" value="23"></div>
+      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
+      <div class="row"><div class="label">VAT (15%)</div><input type="text" class="vat" readonly></div>
+      <div class="row yellow"><div class="label">Total w/ VAT</div><input type="text" class="total-with-vat" readonly></div>
+      <div class="row red"><div class="label">Net Payable to Clinic</div><input type="text" class="net-payable" readonly></div>
+    </div>
+
+    <!-- Offer 4 -->
+    <div class="offer-box">
+      <div class="title">Offer for Non-Saudi (Mobadar)</div>
+      <div class="row green"><div class="label">Clinic Revenue</div><input type="number" class="clinic-cost" value="385"></div>
+      <div class="row"><div class="label">Thaat (B to B)</div><input type="number" class="thaat" value="30"></div>
+      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
+      <div class="row"><div class="label">VAT (15%)</div><input type="text" class="vat" readonly></div>
+      <div class="row yellow"><div class="label">Total w/ VAT</div><input type="text" class="total-with-vat" readonly></div>
+      <div class="row"><div class="label">Thaat % + VAT</div><input type="text" class="thaat-percent" readonly></div>
+      <div class="row red"><div class="label">Net Payable to Clinic</div><input type="text" class="net-payable" readonly></div>
+    </div>
+
+  </div>
+
+  <script>
+    function calculateAll() {
+      document.querySelectorAll('.offer-box').forEach(box => {
+        const costInput = box.querySelector('.clinic-cost');
+        const thaatInput = box.querySelector('.thaat');
+        const totalInput = box.querySelector('.total-price');
+        const percentInput = box.querySelector('.thaat-percent');
+        const vatInput = box.querySelector('.vat');
+        const totalWithVATInput = box.querySelector('.total-with-vat');
+        const netPayableInput = box.querySelector('.net-payable');
+
+        const cost = parseFloat(costInput.value) || 0;
+        const thaat = parseFloat(thaatInput.value) || 0;
+
+        const total = cost + thaat;
+        if (totalInput) totalInput.value = total;
+
+        if (percentInput) {
+          const percent = thaat !== 0 ? Math.round(thaat / total * 100) : 0;
+          percentInput.value = percent;
+        }
+
+        if (vatInput && totalWithVATInput && netPayableInput) {
+          const vat = total * 0.15;
+          vatInput.value = Math.round(vat);
+          totalWithVATInput.value = Math.round(total + vat);
+          netPayableInput.value = Math.round(cost);  // Adjust if needed
+        }
+      });
+    }
+
+    // Listen for changes
+    document.querySelectorAll('.clinic-cost, .thaat').forEach(input => {
+      input.addEventListener('input', calculateAll);
+    });
+
+    // Initial calculation
+    calculateAll();
+  </script>
+</body>
+</html>
