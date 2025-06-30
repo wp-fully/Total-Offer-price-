@@ -1,222 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clinic Offers Calculator</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      background: #f0f0f0;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    .offer-box {
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      border: 3px solid #ccc;
-    }
-
-    .title {
-      background: yellow;
-      font-weight: bold;
-      text-align: center;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    .sub-title {
-      background: red;
-      color: white;
-      text-align: center;
-      padding: 3px;
-      font-size: 0.9em;
-      margin-bottom: 5px;
-    }
-
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 5px 0;
-      gap: 10px;
-    }
-
-    .row input {
-      width: 30%;
-      padding: 5px;
-      text-align: right;
-    }
-
-    .green { background: #c9f7c4; }
-    .yellow { background: #fff59d; }
-    .red { background: #ffcccc; font-weight: bold; }
-    .input-manual { background-color: #e0e0e0; font-weight: bold; }
-
-    .label {
-      flex: 1;
-    }
-
-    @media (max-width: 600px) {
-      .row input {
-        width: 50%;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinic Offers Calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
       }
+
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background: #f0f0f0;
+      }
+
       .container {
-        grid-template-columns: 1fr;
-        width: 98%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 90%;
+        margin: 0 auto;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <div class="container">
+      .offer-box {
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        border: 3px solid #ccc;
+      }
 
-    <!-- Offer 1 -->
-    <div class="offer-box">
-      <div class="title">Offer for Saudi (Others)</div>
-      <div class="row green"><div class="label">Clinic Cost</div><input type="number" class="clinic-cost input-manual" value="100"></div>
-      <div class="row"><div class="label">Thaat</div><input type="number" class="thaat input-manual" value="30"></div>
-      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
-      <div class="row"><div class="label">Thaat %</div><input type="text" class="thaat-percent" readonly></div>
+      .title {
+        background: yellow;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      .sub-title {
+        background: red;
+        color: white;
+        text-align: center;
+        padding: 3px;
+        font-size: 0.9em;
+        margin-bottom: 5px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+        gap: 10px;
+      }
+
+      .row input {
+        width: 30%;
+        padding: 5px;
+        text-align: right;
+      }
+
+      .green {
+        background: #c9f7c4;
+      }
+      .yellow {
+        background: #fff59d;
+      }
+      .red {
+        background: #ffcccc;
+        font-weight: bold;
+      }
+      .input-manual {
+        background-color: #e0e0e0;
+        font-weight: bold;
+      }
+
+      .label {
+        flex: 1;
+      }
+
+      @media (max-width: 600px) {
+        .row input {
+          width: 50%;
+        }
+        .container {
+          grid-template-columns: 1fr;
+          width: 98%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Offer 1 -->
+      <div class="offer-box">
+        <div class="title">Offer for Saudi (Others)</div>
+        <div class="row green">
+          <div class="label">Clinic Cost</div>
+          <input type="number" class="clinic-cost input-manual" value="100" />
+        </div>
+        <div class="row">
+          <div class="label">Thaat</div>
+          <input type="number" class="thaat input-manual" value="30" />
+        </div>
+        <div class="row yellow">
+          <div class="label">Total Offer Price</div>
+          <input type="text" class="total-price" readonly />
+        </div>
+        <div class="row">
+          <div class="label">Thaat %</div>
+          <input type="text" class="thaat-percent" readonly />
+        </div>
+      </div>
+
+      <!-- Offer 2 -->
+      <div class="offer-box" style="background-color: rgba(255, 0, 0, 0.696);">
+        <div class="title">Offer for Saudi (Mobadar)</div>
+        <div class="sub-title">For Mobadar</div>
+        <div class="row green">
+          <div class="label">Clinic Cost</div>
+          <input type="number" class="clinic-cost input-manual" value="100" />
+        </div>
+        <div class="row">
+          <div class="label">Thaat</div>
+          <input type="number" class="thaat input-manual" value="30" />
+        </div>
+        <div class="row yellow">
+          <div class="label">Total Offer Price</div>
+          <input type="text" class="total-price" readonly />
+        </div>
+        <div class="row">
+          <div class="label">Thaat %</div>
+          <input type="text" class="thaat-percent" readonly />
+        </div>
+      </div>
+
+      <!-- Offer 3 -->
+      <div class="offer-box">
+        <div class="title">Offer for Non-Saudi (Others)</div>
+        <div class="row green">
+          <div class="label">Clinic Revenue</div>
+          <input type="number" class="clinic-cost input-manual" value="100" />
+        </div>
+        <div class="row">
+          <div class="label">Thaat on Price</div>
+          <input type="number" class="thaat input-manual" value="30" />
+        </div>
+        <div class="row">
+          <div class="label">VAT</div>
+          <input type="number" class="vat input-manual" value="15" />
+          <input type="number" class="vat-value" value="15" readonly />
+        </div>
+        <div class="row yellow">
+          <div class="label">Total Offer Price</div>
+          <input type="text" class="total-price" readonly />
+        </div>
+        <div class="row yellow">
+          <div class="label">Total w/ VAT</div>
+          <input type="text" class="total-with-vat" readonly />
+        </div>
+        <div class="row yellow">
+          <div class="label">Thaat %</div>
+          <input type="text" class="thaat-percent-3" value="49" />
+        </div>
+        <div class="row red">
+          <div class="label">Net Payable to Clinic</div>
+          <input type="text" class="net-payable" readonly />
+        </div>
+      </div>
+
+      <!-- Offer 4 -->
+      <div class="offer-box">
+        <div class="title">Offer for Non-Saudi (Mobadar)</div>
+        <div class="row green">
+          <div class="label">Clinic Revenue</div>
+          <input type="number" class="clinic-cost input-manual" value="100" />
+        </div>
+        <div class="row">
+          <div class="label">Thaat (B to B)</div>
+          <input type="number" class="thaat input-manual" value="30" />
+        </div>
+        <div class="row">
+          <div class="label">VAT</div>
+          <input type="number" class="vat input-manual" value="15" />
+          <input type="number" class="vat-value-4" value="15" />
+        </div>
+        <div class="row yellow">
+          <div class="label">Total Offer Price</div>
+          <input type="text" class="total-price" readonly />
+        </div>
+        <div class="row yellow">
+          <div class="label">Total Offer Included VAT</div>
+          <input type="text" class="total-with-vat" readonly />
+        </div>
+        <div class="row yellow">
+          <div class="label">Thaat %</div>
+          <input type="text" class="thaat-percent-4" readonly />
+        </div>
+        <div class="row">
+          <div class="label">Thaat % With VAT</div>
+          <input type="text" class="thaat-with-vat" readonly />
+        </div>
+        <div class="row red">
+          <div class="label">Net Payable to Clinic</div>
+          <input type="text" class="net-payable" readonly />
+        </div>
+      </div>
     </div>
 
-    <!-- Offer 2 -->
-    <div class="offer-box">
-      <div class="title">Offer for Saudi (Mobadar)</div>
-      <div class="sub-title">For Mobadar</div>
-      <div class="row green"><div class="label">Clinic Cost</div><input type="number" class="clinic-cost input-manual" value="100"></div>
-      <div class="row"><div class="label">Thaat</div><input type="number" class="thaat input-manual" value="30"></div>
-      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
-      <div class="row"><div class="label">Thaat %</div><input type="text" class="thaat-percent" readonly></div>
-    </div>
+    <script>
+      // جدول 1: Saudi Others
+      function calculateSaudiOthers() {
+        const box = document.querySelectorAll('.offer-box')[0];
+        const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
+        const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
+        const total = cost *100 / (100 - thaat);
 
-    <!-- Offer 3 -->
-    <div class="offer-box">
-      <div class="title">Offer for Non-Saudi (Others)</div>
-      <div class="row green"><div class="label">Clinic Revenue</div><input type="number" class="clinic-cost input-manual" value="100"></div>
-      <div class="row"><div class="label">Thaat on Price</div><input type="number" class="thaat input-manual" value="30"></div>
-      <div class="row"><div class="label">VAT</div>
-      <input type="number" class="vat input-manual" value="15">
-      <input type="number" class="vat-value" value="15" readonly>
-    </div>
-      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
-      <div class="row yellow"><div class="label">Total w/ VAT</div><input type="text" class="total-with-vat" readonly></div>
-      <div class="row yellow"><div class="label">Thaat % </div><input type="text" class="thaat-percent-3" value="49"></div>
-      <div class="row red"><div class="label">Net Payable to Clinic</div><input type="text" class="net-payable" readonly></div>
-    </div>
+        box.querySelector('.total-price').value = Math.round(total);
+        box.querySelector('.thaat-percent').value = Math.round(total - cost)
+      }
 
-    <!-- Offer 4 -->
-    <div class="offer-box">
-      <div class="title">Offer for Non-Saudi (Mobadar)</div>
-      <div class="row green"><div class="label">Clinic Revenue</div><input type="number" class="clinic-cost input-manual" value="100"></div>
-      <div class="row"><div class="label">Thaat (B to B)</div><input type="number" class="thaat input-manual" value="30"></div>
-      <div class="row"><div class="label">VAT</div><input type="number" class="vat input-manual" value="15"></div>
-      <div class="row yellow"><div class="label">Total Offer Price</div><input type="text" class="total-price" readonly></div>
-      <div class="row yellow"><div class="label">Total w/ VAT</div><input type="text" class="total-with-vat" readonly></div>
-      <div class="row"><div class="label">Thaat % + VAT</div><input type="text" class="thaat-percent" readonly></div>
-      <div class="row red"><div class="label">Net Payable to Clinic</div><input type="text" class="net-payable" readonly></div>
-    </div>
+      // جدول 2: Saudi Mobadar
+      function calculateSaudiMobadar() {
+        const box = document.querySelectorAll('.offer-box')[1];
+        const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
+        const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
+        const total = cost + thaat;
 
-  </div>
+        box.querySelector('.total-price').value = Math.ceil(total);
+        box.querySelector('.thaat-percent').value = cost ? Math.ceil((thaat / cost) * 100) : 0;
+      }
 
-  <script>
-    // جدول 1: Saudi Others
-    function calculateSaudiOthers() {
-      const box = document.querySelectorAll('.offer-box')[0];
-      const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
-      const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
-      const total = cost *100 / (100 - thaat);
+      // جدول 3: Non-Saudi Others
+      function calculateNonSaudiOthers() {
+        const box = document.querySelectorAll('.offer-box')[2];
+        const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
+        const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
+        const vat = parseFloat(box.querySelector('.vat').value) || 0;
+        const vatv_alue = parseFloat(box.querySelector('.vat-value').value) || 0;
+        const thaat_percent_3 = parseFloat(box.querySelector('.thaat-percent-3').value) || 0;
 
-      box.querySelector('.total-price').value = Math.ceil(total);
-      box.querySelector('.thaat-percent').value = Math.ceil(total - cost) 
-    }
+        const total = cost *100 / (100 - thaat);
+          const vatt =  Math.round((total * vat) / 100) ;
+        box.querySelector('.total-price').value = Math.ceil(total);
+        box.querySelector('.vat-value').value =  Math.round(total * vat / 100) ;
+        box.querySelector('.total-with-vat').value = Math.ceil(vatt + total);
+        box.querySelector('.thaat-percent-3').value = Math.round(((vatt + total)* thaat )/100);
+        box.querySelector('.net-payable').value = Math.round((vatt + total) - (((vatt + total)* thaat )/100));
+      }
 
-    // جدول 2: Saudi Mobadar
-    function calculateSaudiMobadar() {
-      const box = document.querySelectorAll('.offer-box')[1];
-      const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
-      const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
-      const total = cost + thaat;
+      // جدول 4: Non-Saudi Mobadar
+      function calculateNonSaudiMobadar() {
+        const box = document.querySelectorAll('.offer-box')[3];
+        const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0; //Clinic Revenue
+        const thaat = parseFloat(box.querySelector('.thaat').value) || 0; // Thaat (B to B )
+        const vat = parseFloat(box.querySelector('.vat').value) || 0;  //VAT
+        const vat_value_4 = parseFloat(box.querySelector('.vat-value-4').value) || 0;  //VAT
 
-      box.querySelector('.total-price').value = Math.ceil(total);
-      box.querySelector('.thaat-percent').value = cost ? Math.ceil((thaat / cost) * 100) : 0;
-    }
+        const total = cost + thaat;
+        const totalWithVat = total + vat;
+        const thaatPercent = cost ? Math.ceil((thaat / cost) * 100) : 0;
 
-    // جدول 3: Non-Saudi Others
-    function calculateNonSaudiOthers() {
-      const box = document.querySelectorAll('.offer-box')[2];
-      const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
-      const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
-      const vat = parseFloat(box.querySelector('.vat').value) || 0;
-      const vatv_alue = parseFloat(box.querySelector('.vat-value').value) || 0;
-      const thaat_percent_3 = parseFloat(box.querySelector('.thaat-percent-3').value) || 0;
+        box.querySelector('.total-price').value = Math.round((cost * (100 + thaat))/100); //Total Offer price
+        box.querySelector('.vat-value-4').value = Math.round(((cost * (100 + thaat))/100)* vat / 100); //VAT value
 
-      const total = cost *100 / (100 - thaat);
-        const vatt =  Math.round((total * vat) / 100) ;
-      box.querySelector('.total-price').value = Math.ceil(total);
-      box.querySelector('.vat-value').value =  Math.round(total * vat / 100) ;
-      box.querySelector('.total-with-vat').value = Math.ceil(vatt + total);
-      box.querySelector('.thaat-percent-3').value = Math.ceil(((vatt + total)* thaat )/100);
-      box.querySelector('.net-payable').value = Math.round((vatt + total) - (((vatt + total)* thaat )/100));
-    }
+        box.querySelector('.total-with-vat').value = Math.round((cost * (100 + thaat))/100 + ((cost * (100 + thaat))/100)* vat / 100);
+        box.querySelector('.thaat-percent-4').value = Math.round( ((cost * (100 + thaat))/100) - cost );
+        box.querySelector('.thaat-with-vat').value = Math.round(  (((cost * (100 + thaat))/100) - cost) * 1.15 );
+        box.querySelector('.net-payable').value = Math.round(((cost * (100 + thaat))/100 + ((cost * (100 + thaat))/100)* vat / 100)-(  (((cost * (100 + thaat))/100) - cost) * 1.15 ) );
+      }
 
-    // جدول 4: Non-Saudi Mobadar
-    function calculateNonSaudiMobadar() {
-      const box = document.querySelectorAll('.offer-box')[3];
-      const cost = parseFloat(box.querySelector('.clinic-cost').value) || 0;
-      const thaat = parseFloat(box.querySelector('.thaat').value) || 0;
-      const vat = parseFloat(box.querySelector('.vat').value) || 0;
+      // ربط الأحداث لكل جدول
+      function bindEvents() {
+        document.querySelectorAll('.offer-box')[0].querySelectorAll('.clinic-cost, .thaat')
+          .forEach(input => input.addEventListener('input', calculateSaudiOthers));
 
-      const total = cost + thaat;
-      const totalWithVat = total + vat;
-      const thaatPercent = cost ? Math.ceil((thaat / cost) * 100) : 0;
+        document.querySelectorAll('.offer-box')[1].querySelectorAll('.clinic-cost, .thaat')
+          .forEach(input => input.addEventListener('input', calculateSaudiMobadar));
 
-      box.querySelector('.total-price').value = Math.ceil(total);
-      box.querySelector('.total-with-vat').value = Math.ceil(totalWithVat);
-      box.querySelector('.thaat-percent').value = thaatPercent;
-      box.querySelector('.net-payable').value = Math.ceil(cost);
-    }
+        document.querySelectorAll('.offer-box')[2].querySelectorAll('.clinic-cost, .thaat, .vat')
+          .forEach(input => input.addEventListener('input', calculateNonSaudiOthers));
 
-    // ربط الأحداث لكل جدول
-    function bindEvents() {
-      document.querySelectorAll('.offer-box')[0].querySelectorAll('.clinic-cost, .thaat')
-        .forEach(input => input.addEventListener('input', calculateSaudiOthers));
+        document.querySelectorAll('.offer-box')[3].querySelectorAll('.clinic-cost, .thaat, .vat')
+          .forEach(input => input.addEventListener('input', calculateNonSaudiMobadar));
+      }
 
-      document.querySelectorAll('.offer-box')[1].querySelectorAll('.clinic-cost, .thaat')
-        .forEach(input => input.addEventListener('input', calculateSaudiMobadar));
+      // حساب أولي
+      function initCalculations() {
+        calculateSaudiOthers();
+        calculateSaudiMobadar();
+        calculateNonSaudiOthers();
+        calculateNonSaudiMobadar();
+      }
 
-      document.querySelectorAll('.offer-box')[2].querySelectorAll('.clinic-cost, .thaat, .vat')
-        .forEach(input => input.addEventListener('input', calculateNonSaudiOthers));
-
-      document.querySelectorAll('.offer-box')[3].querySelectorAll('.clinic-cost, .thaat, .vat')
-        .forEach(input => input.addEventListener('input', calculateNonSaudiMobadar));
-    }
-
-    // حساب أولي
-    function initCalculations() {
-      calculateSaudiOthers();
-      calculateSaudiMobadar();
-      calculateNonSaudiOthers();
-      calculateNonSaudiMobadar();
-    }
-
-    bindEvents();
-    initCalculations();
-  </script>
-
-</body>
+      bindEvents();
+      initCalculations();
+    </script>
+  </body>
 </html>
